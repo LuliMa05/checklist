@@ -6,10 +6,10 @@ from fpdf import FPDF
 st.title("APT")
 
 st.markdown("## datos del ejecutante de la tarea")
-nombre = st.text_input("Nombre y apellido")
-area = st.selectbox("area", ["Producción", "MME", "MEE", "MPR", "Almacenes", "Playa de Materia Prima"])
-fecha = st.date_input("Fecha de ejecucion de la tarea")
-fecha_fin = st.date_input("Fecha de finalización de la tarea")
+Nombre = st.text_input("Nombre y apellido")
+Área = st.selectbox("area", ["Producción", "MME", "MEE", "MPR", "Almacenes", "Playa de Materia Prima"])
+Fecha = st.date_input("Fecha de ejecucion de la tarea")
+Fecha_fin = st.date_input("Fecha de finalización de la tarea")
 
 st.markdown("## factores de riesgos identificados")
 riesgos = {
@@ -37,9 +37,9 @@ pdf.set_font("Arial", size=12)
 pdf.cell(200, 10, txt="Checklist de Peligros Críticos", ln=True, align='C')
 pdf.ln(10)
 
-pdf.cell(200, 10, txt=f"Nombre: {nombre}", ln=True)
-pdf.cell(200, 10, txt=f"Área: {area}", ln=True)
-pdf.cell(200, 10, txt=f"Fecha: {fecha.strftime('%Y-%m-%d')}", ln=True)
+pdf.cell(200, 10, txt=f"Nombre: {Nombre}", ln=True)
+pdf.cell(200, 10, txt=f"Área: {Área}", ln=True)
+pdf.cell(200, 10, txt=f"Fecha: {Fecha.strftime('%Y-%m-%d')}", ln=True)
 pdf.ln(5)
 
 for clave, valor in riesgos.items():
@@ -49,8 +49,6 @@ pdf.ln(5)
 pdf.multi_cell(200, 10, txt=f"Comentarios: {comentarios}")
 nombre_archivo_pdf = f"checklist_{nombre.replace(' ', '_')}_{fecha.strftime('%Y%m%d')}.pdf"
 pdf.output(nombre_archivo_pdf)
-
-import io
 
 # Guardar el PDF en memoria
 import io
