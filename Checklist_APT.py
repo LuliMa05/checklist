@@ -7,25 +7,26 @@ st.title("APT")
 
 st.markdown("## datos del ejecutante de la tarea")
 nombre = st.text_input("Nombre y apellido")
-area = st.selectbox("area", ["prod", "mant", "mpr", "ing"])
-fecha = st.date_input("fecha de ejecucion de la tarea")
+area = st.selectbox("area", ["Producción", "MME", "MEE", "MPR", "Almacenes", "Playa de Materia Prima"])
+fecha = st.date_input("Fecha de ejecucion de la tarea")
+fecha_fin = st.date_input("Fecha de finalización de la tarea")
 
 st.markdown("## factores de riesgos identificados")
 riesgos = {
-    "trab altura": st.checkbox("trabj en alt"),
-    "izaje": st.checkbox("izaje"),
-    "bloqueos": st.checkbox("bloqueo"),
+    "Trabajo en altura": st.checkbox("Trabajo en altura"),
+    "Izaje de cargas": st.checkbox("Izaje de cargas"),
+    "Intervención de máquinas con energías acumuladas": st.checkbox("Intervención de máquinas con energías acumuladas"),
 }
 
-comentarios = st.text_area("coment adicionales")
+comentarios = st.text_area("Comentarios adicionales de la tarea")
 
-if st.button("enviar checklist"):
+if st.button("Enviar checklist"):
     df = pd.DataFrame([{
-        "nombre": nombre,
-        "area": area,
-        "fecha": fecha.strftime("%Y-%m-%d"),
-        **riesgos,
-        "comentarios": comentarios
+        "Nombre": nombre,
+        "Área": area,
+        "Fecha de ejecución": fecha.strftime("%Y-%m-%d"),
+        "Riesgos involucrados": **riesgos,
+        "Comentarios adicionales": comentarios
         }])
 
     df.to_csv("respuestas.csv", mode='a', header=False, index=False)
