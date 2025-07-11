@@ -30,7 +30,7 @@ if st.button("enviar checklist"):
 
     df.to_csv("respuestas.csv", mode='a', header=False, index=False)
 
-pdf = FDPF()
+pdf = FPDF()
 pdf.add_page()
 pdf.set_font("Arial", size=12)
 pdf.cell(200, 10, txt="Checklist de Peligros Críticos", ln=True, align='C')
