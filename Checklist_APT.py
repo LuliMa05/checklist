@@ -49,5 +49,20 @@ pdf.multi_cell(200, 10, txt=f"Comentarios: {comentarios}")
 nombre_archivo_pdf = f"checklist_{nombre.replace(' ', '_')}_{fecha.strftime('%Y%m%d')}.pdf"
 pdf.output(nombre_archivo_pdf)
 
+import io
+
+# Guardar el PDF en memoria
+pdf_buffer = io.BytesIO()
+pdf.output(pdf_buffer)
+pdf_buffer.seek(0)
+
+# Botón para descargar el PDF
+st.download_button(
+    label="Descargar PDF",
+    data=pdf_buffer,
+    file_name=nombre_archivo_pdf,
+    mime="application/pdf"
+)
+
 st.success("Checklist enviado y PDF generado.")
 
