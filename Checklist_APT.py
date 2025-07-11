@@ -7,7 +7,7 @@ st.title("APT")
 
 st.markdown("## Datos del ejecutante de la tarea")
 Nombre = st.text_input("Nombre y apellido")
-Área = st.selectbox("area", ["Producción", "MME", "MEE", "MPR", "Almacenes", "Playa de Materia Prima"])
+Área = st.selectbox("Área", ["Producción", "MME", "MEE", "MPR", "Almacenes", "Playa de Materia Prima"])
 Fecha = st.date_input("Fecha de ejecucion de la tarea")
 Fecha_fin = st.date_input("Fecha de finalización de la tarea")
 
