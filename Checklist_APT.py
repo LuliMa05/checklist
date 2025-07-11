@@ -69,5 +69,5 @@ st.download_button(
     mime="application/pdf"
 )
 
-st.success("Checklist enviado y PDF generado.")
+
 
