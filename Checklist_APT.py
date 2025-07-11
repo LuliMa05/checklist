@@ -28,26 +28,26 @@ if st.button("enviar checklist"):
         "comentarios": comentarios
         }])
 
-    dt.to_csv("respuestas.csv", mode='a'. header=False, index=False)
+dt.to_csv("respuestas.csv", mode='a'. header=False, index=False)
 
-    pdf = FDPF()
-    pdf.add_page()
-    pdf.set_font("Arial", size=12)
-    pdf.cell(200, 10, txt="Checklist de Peligros Críticos", ln=True, align='C')
-    pdf.ln(10)
+pdf = FDPF()
+pdf.add_page()
+pdf.set_font("Arial", size=12)
+pdf.cell(200, 10, txt="Checklist de Peligros Críticos", ln=True, align='C')
+pdf.ln(10)
 
-    pdf.cell(200, 10, txt=f"Nombre: {nombre}", ln=True)
-    pdf.cell(200, 10, txt=f"Área: {area}", ln=True)
-    pdf.cell(200, 10, txt=f"Fecha: {fecha.strftime('%Y-%m-%d')}", ln=True)
-    pdf.ln(5)
+pdf.cell(200, 10, txt=f"Nombre: {nombre}", ln=True)
+pdf.cell(200, 10, txt=f"Área: {area}", ln=True)
+pdf.cell(200, 10, txt=f"Fecha: {fecha.strftime('%Y-%m-%d')}", ln=True)
+pdf.ln(5)
 
-    for clave, valor in riesgos.items():
-        pdf.cell(200, 10, txt=f"{clave}: {'Sí' if valor else 'No'}", ln=True)
+for clave, valor in riesgos.items():
+pdf.cell(200, 10, txt=f"{clave}: {'Sí' if valor else 'No'}", ln=True)
 
-    pdf.ln(5)
-    pdf.multi_cell(200, 10, txt=f"Comentarios: {comentarios}")
-    nombre_archivo_pdf = f"checklist_{nombre.replace(' ', '_')}_{fecha.strftime('%Y%m%d')}.pdf"
-    pdf.output(nombre_archivo_pdf)
+pdf.ln(5)
+pdf.multi_cell(200, 10, txt=f"Comentarios: {comentarios}")
+nombre_archivo_pdf = f"checklist_{nombre.replace(' ', '_')}_{fecha.strftime('%Y%m%d')}.pdf"
+pdf.output(nombre_archivo_pdf)
 
-    st.success("Checklist enviado y PDF generado.")
+st.success("Checklist enviado y PDF generado.")
 
