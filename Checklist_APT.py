@@ -52,11 +52,17 @@ pdf.output(nombre_archivo_pdf)
 import io
 
 # Guardar el PDF en memoria
+import io
+
+# Crear buffer de memoria
 pdf_buffer = io.BytesIO()
-pdf.output(pdf_buffer)
+
+# Guardar el PDF en el buffer usando dest='S' para obtener el contenido
+pdf_bytes = pdf.output(dest='S').encode('latin1')
+pdf_buffer.write(pdf_bytes)
 pdf_buffer.seek(0)
 
-# Botón para descargar el PDF
+# Botón de descarga en Streamlit
 st.download_button(
     label="Descargar PDF",
     data=pdf_buffer,
