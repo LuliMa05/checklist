@@ -42,7 +42,7 @@ pdf.cell(200, 10, txt=f"Fecha: {fecha.strftime('%Y-%m-%d')}", ln=True)
 pdf.ln(5)
 
 for clave, valor in riesgos.items():
-pdf.cell(200, 10, txt=f"{clave}: {'Sí' if valor else 'No'}", ln=True)
+    pdf.cell(200, 10, txt=f"{clave}: {'Sí' if valor else 'No'}", ln=True)
 
 pdf.ln(5)
 pdf.multi_cell(200, 10, txt=f"Comentarios: {comentarios}")
