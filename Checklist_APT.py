@@ -7,7 +7,7 @@ st.title("APT")
 
 st.mardown("## datos del ejecutante de la tarea")
 nombre = st.tx_input("Nombre y apellido")
-area = st.selectbox("area", ["prod", "mant", "mpr", "ing"]
+area = st.selectbox("area", ["prod", "mant", "mpr", "ing"])
 fecha = st.date_input("fecha de ejecucion de la tarea")
 
 st.markdown("## factores de riesgos identificados")
