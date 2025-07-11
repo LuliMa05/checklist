@@ -5,13 +5,13 @@ from fpdf import FPDF
 
 st.title("APT")
 
-st.markdown("## datos del ejecutante de la tarea")
+st.markdown("## Datos del ejecutante de la tarea")
 Nombre = st.text_input("Nombre y apellido")
 Área = st.selectbox("area", ["Producción", "MME", "MEE", "MPR", "Almacenes", "Playa de Materia Prima"])
 Fecha = st.date_input("Fecha de ejecucion de la tarea")
 Fecha_fin = st.date_input("Fecha de finalización de la tarea")
 
-st.markdown("## factores de riesgos identificados")
+st.markdown("## Factores de riesgos identificados")
 riesgos = {
     "Trabajo en altura": st.checkbox("Trabajo en altura"),
     "Izaje de cargas": st.checkbox("Izaje de cargas"),
@@ -22,9 +22,9 @@ comentarios = st.text_area("Comentarios adicionales de la tarea")
 
 if st.button("Enviar checklist"):
     df = pd.DataFrame([{
-        "Nombre": nombre,
-        "Área": area,
-        "Fecha de ejecución": fecha.strftime("%Y-%m-%d"),
+        "Nombre": Nombre,
+        "Área": Área,
+        "Fecha de ejecución": Fecha.strftime("%Y-%m-%d"),
         "Riesgos involucrados": riesgos,
         "Comentarios adicionales": comentarios
         }])
