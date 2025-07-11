@@ -28,7 +28,7 @@ if st.button("enviar checklist"):
         "comentarios": comentarios
         }])
 
-dt.to_csv("respuestas.csv", mode='a'. header=False, index=False)
+dt.to_csv("respuestas.csv", mode='a', header=False, index=False)
 
 pdf = FDPF()
 pdf.add_page()
