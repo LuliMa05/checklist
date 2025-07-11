@@ -33,7 +33,7 @@ if st.button("Enviar checklist"):
 
 pdf = FPDF()
 pdf.add_page()
-pdf.set_font("Arial", size=12)
+pdf.set_font("Arial", size=15, italic=TRUE)
 pdf.cell(200, 10, txt="Checklist de Peligros Críticos", ln=True, align='C')
 pdf.ln(10)
 
