@@ -25,7 +25,7 @@ if st.button("Enviar checklist"):
         "Nombre": nombre,
         "Área": area,
         "Fecha de ejecución": fecha.strftime("%Y-%m-%d"),
-        "Riesgos involucrados": **riesgos,
+        "Riesgos involucrados": riesgos,
         "Comentarios adicionales": comentarios
         }])
 
