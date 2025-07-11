@@ -47,7 +47,7 @@ for clave, valor in riesgos.items():
 
 pdf.ln(5)
 pdf.multi_cell(200, 10, txt=f"Comentarios: {comentarios}")
-nombre_archivo_pdf = f"checklist_{nombre.replace(' ', '_')}_{fecha.strftime('%Y%m%d')}.pdf"
+nombre_archivo_pdf = f"checklist_{Nombre.replace(' ', '_')}_{Fecha.strftime('%Y%m%d')}.pdf"
 pdf.output(nombre_archivo_pdf)
 
 # Guardar el PDF en memoria
