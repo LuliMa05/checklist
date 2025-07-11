@@ -6,7 +6,7 @@ from fpdf import FPDF
 st.title("APT")
 
 st.markdown("## datos del ejecutante de la tarea")
-nombre = st.tx_input("Nombre y apellido")
+nombre = st.text_input("Nombre y apellido")
 area = st.selectbox("area", ["prod", "mant", "mpr", "ing"])
 fecha = st.date_input("fecha de ejecucion de la tarea")
 
